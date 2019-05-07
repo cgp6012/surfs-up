@@ -15,8 +15,28 @@ export default class StarRating extends Component {
     //limit for how large the min/max rating values can be
     limit: 1000
   }
-
-  render() {
+  //maxRating and divide it by the starRatio, then round the answer up to the next integer
+  maxStars() {
+    let { maxRating, starRatio } = this.props
+    return Math.ceil(maxRating / starRatio)
+  }
+  // rating and divide it by the starRatio, then round the answer down to the next integer
+  fullStars() {
+    let { rating, starRatio } = this.props
+    return Math.floor(rating / starRatio)
+  }
+  //remainder) of rating and starRatio, get half the value of starRatio, and compare the two using a ternary operator. If `x` is greater than or equal to `i`, we return one half-star; otherwise, we return no half-stars
+  halfStars() {
+    let { rating, starRatio } = this.props
+    let x = rating % starRatio
+    let i = (1 / 2) * starRatio
+    return x >= i ? 1 : 0
+  }
+  //maxStars and subtract from it fullStars and halfStars
+  emptyStars() {
+    return this.maxStars() - this.fullStars() - this.halfStars()
+  }
+render() {
     return (
       <div className="star-rating">
     

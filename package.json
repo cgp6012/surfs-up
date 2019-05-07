@@ -1,0 +1,19 @@
+{
+  "name": "surfsup",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cgp6012/surfs-up.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cgp6012/surfs-up/issues"
+  },
+  "homepage": "https://github.com/cgp6012/surfs-up#readme"
+}
